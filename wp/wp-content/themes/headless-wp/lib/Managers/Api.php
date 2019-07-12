@@ -44,7 +44,7 @@ class Api {
 				'methods'  => 'GET',
 				'callback' => function() {
 					return array(
-						'test' => 'foo',
+						'test' => 'boom',
 					);
 				},
 			)
