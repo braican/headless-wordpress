@@ -18,7 +18,7 @@ class Api {
 	 *
 	 * @var string
 	 */
-	public static $namespace = 'headless/v1';
+	public $namespace = 'headless/v1';
 
 	/**
 	 * Initialize.
@@ -37,6 +37,18 @@ class Api {
 	 * @return void
 	 */
 	public function setup_endpoints() {
+		register_rest_route(
+			$this->namespace,
+			'/globals',
+			array(
+				'methods'  => 'GET',
+				'callback' => function() {
+					return array(
+						'test' => 'foo',
+					);
+				},
+			)
+		);
 	}
 }
 
