@@ -9,7 +9,7 @@ echo
 
 echo "Installing PHP dependencies and WordPress plugins..."
 echo
-docker-compose run --rm wp composer install
+# docker-compose run --rm wp composer install
 echo
 
 echo "-------------------------------"

@@ -1,15 +1,15 @@
 version: "3.5"
 services:
-  # flask:
-  #   build:
-  #     context: flask
-  #   ports:
-  #     - 8001:5000
-  #   volumes:
-  #     - ./flask:/usr/src/app
-  #   environment:
-  #     WP_API_URL: http://wp/wp-json
-  #     WP_BACKEND_DOMAIN: http://localhost:8000
+  flask:
+    build:
+      context: flask
+    ports:
+      - 8001:5000
+    volumes:
+      - ./flask:/usr/src/app
+    environment:
+      WP_API_URL: http://wp/wp-json
+      WP_BACKEND_DOMAIN: http://localhost:8000
 
   wp:
     build:

@@ -1,0 +1,9 @@
+# build caches
+__pycache__
+.eslintcache
+
+# Static files are built to this directory
+dist/
+
+# Node modules
+node_modules/
