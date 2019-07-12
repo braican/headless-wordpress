@@ -23,6 +23,9 @@ def get_page(slug, embed=True):
     except IndexError:
         return None
 
+def get_recipe(id) :
+    return req('wp/v2/recipes/' + id).json()
+
 def get_site_info():
     return req('headless/v1/globals').json()
 

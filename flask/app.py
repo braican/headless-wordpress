@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template, send_from_directory
-from .wp import get_page, get_posts, get_post, get_site_info
+from .wp import get_page, get_posts, get_post, get_site_info, get_recipe
 
 app = Flask(__name__, )
 
@@ -15,6 +15,13 @@ def page(slug):
     if not page:
         return render_template('404.html')
     return render_template('page.html', page=page, **get_global_context())
+
+@app.route('/recipe/<string:recipeId>')
+def recipe(recipeId):
+    recipe = get_recipe(recipeId)
+    if not recipe:
+        return render_template('404.html')
+    return render_template('recipe.html', recipe=recipe, **get_global_context())
 
 
 @app.route('/robots.txt')
