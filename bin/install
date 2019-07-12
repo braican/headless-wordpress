@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+
+echo "Bringing up project containers..."
+echo
+docker-compose up --build --no-start
+echo
+
+echo "Installing PHP dependencies and WordPress plugins..."
+echo
+docker-compose run --rm wp composer install
+echo
+
+echo "-------------------------------"
+echo "Install completed successfully!"
+echo "-------------------------------"
+echo

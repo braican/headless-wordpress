@@ -35,14 +35,15 @@ class CustomPostTypes {
 		);
 
 		register_post_type(
-			'author',
+			'recipe',
 			array(
 				'labels'        => $recipe_labels,
 				'public'        => true,
 				'has_archive'   => true,
-				'menu_position' => 5,
+				'menu_position' => 20,
+				'show_in_rest'  => true, // This needs to be true so that Gutenberg can get to it.
+				'rest_base'     => 'recipes',
 				'menu_icon'     => 'dashicons-text-page',
-				'rewrite'       => array( 'slug' => 'recipes' ),
 				'supports'      => array( 'editor', 'title', 'thumbnail' ),
 				'taxonomies'    => array(),
 			)

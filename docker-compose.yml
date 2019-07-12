@@ -1,27 +1,26 @@
 version: "3.5"
 services:
-  flask:
-    build:
-      context: flask
-    ports:
-      - 8001:5000
-    volumes:
-      - ./flask:/usr/src/app
-    environment:
-      WP_API_URL: http://wp/wp-json
-      WP_BACKEND_DOMAIN: http://localhost:8000
+  # flask:
+  #   build:
+  #     context: flask
+  #   ports:
+  #     - 8001:5000
+  #   volumes:
+  #     - ./flask:/usr/src/app
+  #   environment:
+  #     WP_API_URL: http://wp/wp-json
+  #     WP_BACKEND_DOMAIN: http://localhost:8000
 
   wp:
     build:
       context: wp
     ports:
-      - 8000:80
-    working_dir: /var/www/html/wp-content/themes/headless
+      - 8080:80
+    working_dir: /var/www/html/wp-content/themes/headless-wp
     volumes:
       - ./wp/wp-content/plugins:/var/www/html/wp-content/plugins
       - ./wp/wp-content/themes:/var/www/html/wp-content/themes
       - ./wp/wp-content/uploads:/var/www/html/wp-content/uploads
-      - ./docker/php.ini:/usr/local/etc/php/conf.d/wp.ini
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: wordpress
@@ -36,7 +35,6 @@ services:
   db:
     image: mysql:5.7
     volumes:
-      - ./docker/initdb.d:/docker-entrypoint-initdb.d
       - db_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: wordpress
