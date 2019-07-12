@@ -4,11 +4,17 @@ Using WordPress purely as a backend to distribute content via a REST API allows 
 
 ## Table of contents
 
+* [Environments](#directory-structure)
 * [Environments](#environments)
 * [Prerequisites](#prerequisites)
 * [Getting Started](#getting-started)
 * [Development](#development)
 * [WordPress REST API](#the-wordpress-rest-api)
+
+## Directory Structure
+
+The WordPress site lives in the `wp` directory.
+
 
 ## Environments
 

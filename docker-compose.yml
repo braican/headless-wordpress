@@ -16,7 +16,7 @@ services:
       context: wp
     ports:
       - 8000:80
-    working_dir: /var/www/html/wp-content/themes/markup
+    working_dir: /var/www/html/wp-content/themes/headless
     volumes:
       - ./wp/wp-content/plugins:/var/www/html/wp-content/plugins
       - ./wp/wp-content/themes:/var/www/html/wp-content/themes

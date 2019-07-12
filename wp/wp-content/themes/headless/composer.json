@@ -1,0 +1,35 @@
+{
+  "name": "braican/headless-wordpress",
+  "description": "A theme for a headless WordPress site that produces a REST API.",
+  "version": "0.0.1",
+  "type": "wordpress-theme",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.8.0",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=KEY_HERE"
+        }
+      }
+    }
+  ],
+  "require": {
+    "composer/installers": "*",
+    "advanced-custom-fields/advanced-custom-fields-pro": "5.8.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
+  }
+}
