@@ -1,0 +1,8 @@
+# Environments
+.env
+
+# Editor settings
+.vscode
+
+# Node modules
+/node_modules
